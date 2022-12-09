@@ -1,0 +1,20 @@
+//window.addEventListener('load',claculateTime)
+
+function calculateTime() {
+  let date = new Date();
+  let dayNumber = date.getDay();
+  let hour = date.getHours();
+  let minute = date.getMinutes();
+  let amPm = hour >= 12 ? "PM" : "AM";
+  let dayNames = ["SUN", "MON", "TUE", "WED", "THUR", "FRI", "SAT"];
+
+  hour = hour % 12;
+  hour = hour ? hour : 12;
+
+  document.getElementById("day").innerHTML = dayNames[dayNumber];
+  document.getElementById("hour").innerHTML = hour;
+  document.getElementById("minute").innerHTML = minute;
+  document.getElementById("ampm").innerHTML = amPm;
+}
+
+setInterval(calculateTime, 200);
